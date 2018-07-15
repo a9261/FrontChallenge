@@ -6,13 +6,13 @@ export default class Header extends Component {
             <div className={`${styles.header}`}>
                 <ul className={styles['menu-bar']}>
                     <li>
-                        <a href>My Taks</a>
+                        <a href='ture'>My Taks</a>
                     </li>
                     <li>
-                        <a href>In Progress</a>
+                        <a href='ture'>In Progress</a>
                     </li>
                     <li>
-                        <a href>Completed</a>
+                        <a href='ture'>Completed</a>
                     </li>
                 </ul>
             </div>

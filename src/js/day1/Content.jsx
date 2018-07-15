@@ -4,7 +4,6 @@ import MainContent from './Components/MainContent';
 import Header from './Components/Header'
 export default class Content extends React.Component {
   render() {
-    console.log(styles);
     return (
       <div id="content-wrapper" className={`${styles['content-wrapper']}`}>
         <Header/>

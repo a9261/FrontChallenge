@@ -1,0 +1,39 @@
+.main-content {
+    // background-color: #e1e1e1;
+    background-color:#f2f2f2;
+    width: 620px;
+    height: 519px;
+    margin-top:12px;
+    .header{
+        height:76px;
+        .fontStyle {
+            font-size: 24px;
+        }
+    }
+    .content{
+        height:383px;
+    }
+    .button-section{
+        display: flex;
+        flex-direction: row;
+        height:60px;
+        .button-cancel{
+            text-align: center;
+            vertical-align: middle;
+            line-height: 60px;
+            width:310px;
+            height:60px;
+            color:#D0021b;
+            font-size: 24px;
+        }
+        .button-add{
+            text-align: center;
+            vertical-align: middle;
+            line-height: 60px;
+            background-color: #4a90e2;
+            width:310px;
+            height:60px;
+            font-size: 24px;
+        }
+    }
+}
