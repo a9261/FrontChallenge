@@ -1,7 +1,8 @@
 import * as types from '../Constants/ActionTypes'
 
+
 export default function taskProcess(state = [], action) {
-    switch (action.key) {
+    switch (action.type) {
         case types.ADD_TASK:
             return [...state,action.data]
             break;

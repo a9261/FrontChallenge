@@ -1,8 +1,9 @@
+import layoutProcess from './Layout'
 import taskProcess from './Task'
 import { combineReducers } from 'redux'
 
 const allReducer = combineReducers({
-    taskProcess
+    layoutProcess,taskProcess
 })
 
 export default allReducer

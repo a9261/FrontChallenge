@@ -5,9 +5,10 @@ export default class TaskAdd extends Component {
     super(props)
   }
   render() {
+    const {layoutAction} = this.props;
     return (
       <div>
-        <div className={`${styles['task-add']}`} onClick={this.props.abc}>
+        <div className={`${styles['task-add']}`} onClick={layoutAction.showAddTask}>
             <span>+</span>
             <span>Add Task</span>
         </div>
