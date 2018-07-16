@@ -1,6 +1,7 @@
 import * as types from '../Constants/ActionTypes'
 export function addTask(task){
      return (dispatch) => {
+        // dispatch(addTaskSuccess(task));
         dispatch(addTaskRequest());
         setTimeout(() => {
             dispatch(addTaskSuccess(task));
