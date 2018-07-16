@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
 import styles from './TaskEdit.scss'
 export default class TaskEdit extends Component {
+  constructor(props){
+    super(props)
+  }
+  getAddOrEditEle(){
+    if(this.props.layoutData.addTaskPanel){
+      return <div className={`${styles['button-add']}`}>+ Add Task</div>
+    }
+    if(this.props.layoutData.editTaskPanel){
+      return <div className={`${styles['button-add']}`}>Save Task</div>
+    }
+  }
   render() {
     return (
       <div className={`${styles['main-content']}`}>
@@ -18,7 +29,7 @@ export default class TaskEdit extends Component {
         {/* buttons */}
         <div className={`${styles['button-section']}`}>
            <div className={`${styles['button-cancel']}`}>X Cancel</div>
-           <div className={`${styles['button-add']}`}>+ Add Task</div>
+           {this.getAddOrEditEle()}           
         </div>
       </div>
     )
