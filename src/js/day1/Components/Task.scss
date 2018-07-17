@@ -2,6 +2,14 @@
   margin-top: 8px;
   font-family: Roboto-Medium;
   font-size: 24px;
+  color: #000000;
+  .task-right-icons {
+    float:right;
+    margin-top:20px;
+    i {
+      margin-right:10px;
+    }
+  }
   .undone-task {
     height: 102px;
     width: 620px;
@@ -11,7 +19,7 @@
     flex-wrap: wrap;
     // flex-flow: row wrap;
     // align-content: flex-end;
-    div {
+    .width-100 {
       width: 100%;
     }
   }

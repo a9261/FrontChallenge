@@ -4,6 +4,9 @@
     width: 620px;
     height: 519px;
     margin-top:12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     .header{
         height:76px;
         .fontStyle {
@@ -11,13 +14,15 @@
         }
     }
     .content{
-        height:383px;
+        height:413px;
+        height:104px;
     }
     .button-section{
-        display: flex;
-        flex-direction: row;
+        position: relative;
         height:60px;
+        bottom: 0px;
         .button-cancel{
+            float:left;
             text-align: center;
             vertical-align: middle;
             line-height: 60px;
@@ -27,6 +32,7 @@
             font-size: 24px;
         }
         .button-add{
+            float:right;
             text-align: center;
             vertical-align: middle;
             line-height: 60px;

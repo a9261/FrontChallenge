@@ -77,33 +77,42 @@ config.module = {
                         modules: true,
                         localIdentName: '[name]__[local]___[hash:base64:5]'
                     }
-                }, {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: () => [require('autoprefixer')({
-                                'browsers': ['> 1%', 'last 2 versions']
-                            })]
-                    }
-                },
-                'sass-loader'
+                }
+                // , {
+                //     loader: 'postcss-loader',
+                //     options: {
+                //         plugins: () => [require('autoprefixer')({
+                //                 'browsers': ['> 1%', 'last 2 versions']
+                //             })]
+                //     }
+                // }
+                ,{
+                loader:'sass-loader',
+                options:{
+                    // includePaths: [path.resolve(__dirname, 'node_modules/react-datepicker')]
+                }
+              }
             ]
         }, {
             test: /\.css$/,
             use: [
-                MiniCssExtractPlugin.loader, {
+                // MiniCssExtractPlugin.loader, 
+                'style-loader',
+                {
                     loader: 'css-loader',
                     options: {
                         modules: true,
                         localIdentName: '[name]__[local]___[hash:base64:5]'
                     }
-                }, {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: () => [require('autoprefixer')({
-                                'browsers': ['> 1%', 'last 2 versions ']
-                            })]
-                    }
                 }
+                // , {
+                //     loader: 'postcss-loader',
+                //     options: {
+                //         plugins: () => [require('autoprefixer')({
+                //                 'browsers': ['> 1%', 'last 2 versions ']
+                //             })]
+                //     }
+                // }
             ]
         }, {
             test: /\.txt$/, // MyLoader Test

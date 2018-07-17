@@ -4,20 +4,22 @@ import styles from './TaskList.scss'
 export default class TaskList extends React.Component {
   constructor(props){
     super(props)
-    this.TasksEle = this.renderItems(props.tasks) 
+    this.unDoneTasks = 0 ;
+    this.tasksEle = this.renderItems(props.taskData) 
+    
   }
   renderItems(tasks){
-   return tasks.map((item,i)=>{
-      return <Task key={i} isDone={`${item.isDone}`}/>
-    });
+   let result = tasks.map((item,i)=>{
+     if(!item.isDone){ this.unDoneTasks++;}
+     return <Task key={i} taskItem={item} taskAction={this.props.taskAction}/>
+   });
+   return result;
   }
   render() {
     return (
       <div className={`${styles['task-list']}`}>
-        {/* <Task isDone='true'/>
-        <Task isDone='false'/> */}
-        {this.TasksEle}
-        <span>4 tasks left</span>
+        {this.tasksEle}
+        <span>{this.unDoneTasks} tasks left</span>
       </div>
     )
   }
