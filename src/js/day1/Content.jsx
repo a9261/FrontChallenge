@@ -6,11 +6,11 @@ import {createStore, bindActionCreators} from "redux";
 import {connect, Provider} from 'react-redux';
 import allReducer from './Reducers';
 import * as layoutAction from './ActionCreators/Layout'
-import {createDefaultConnectComponent} from './ConnectCreator';
+import {createDefaultConnectComponent,createConnectComponent} from './ConnectCreator';
 export default class Content extends React.Component {
   render() {
     let MainContentContainer = createDefaultConnectComponent(MainContent);
-    let HeaderContainer = createDefaultConnectComponent(Header);
+    let HeaderContainer = createConnectComponent(Header,null);
     return (
       <div id="content-wrapper" className={`${styles['content-wrapper']}`}>
         <HeaderContainer/>

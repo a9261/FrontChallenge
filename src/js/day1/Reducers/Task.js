@@ -3,33 +3,6 @@ import * as types from '../Constants/ActionTypes'
 let initState = [];
 export default function taskProcess(state = initState, action) {
     switch (action.type) {
-        case types.SET_FILTER:
-            let filteredTasks = [];
-            switch (action.data.filter) {
-                case types.SHOW_ALL:
-                    filteredTasks = state.map(item => {
-                        item.IsView = true;
-                        return item;
-                    });
-                    return filteredTasks;
-                case types.SHOW_COMPLETED:
-                    filteredTasks = state.map(item => {
-                        if (item.IsDone) 
-                            item.IsView = true;
-                        return item;
-                    });
-                    return filteredTasks;
-                case types.SHOW_PROGRESS:
-                    filteredTasks = state.map(item => {
-                        if (!item.IsDone) 
-                            item.IsView = true;
-                        return item;
-                    });
-                    return filteredTasks;
-                default:
-                    return state;
-            }
-            return
         case types.ADD_TASK:
             return [
                 ...state,

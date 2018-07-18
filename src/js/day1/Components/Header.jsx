@@ -4,15 +4,27 @@ import styles from './Header.scss'
 export default class Header extends Component {
     constructor(props){
         super(props);
-        console.log(props);
+        this.state = {
+            filterType : types.SHOW_ALL
+        }
+        this.props.taskAction.filterTaskList(this.state.filterType);
     }
     showAllTask(){
+        this.setState({
+            filterType:types.SHOW_ALL
+        });
         this.props.taskAction.filterTaskList(types.SHOW_ALL);
     }
     showProgressTask(){
+        this.setState({
+            filterType:types.SHOW_PROGRESS
+        });
         this.props.taskAction.filterTaskList(types.SHOW_PROGRESS);
     }
     showCompletedTask(){
+        this.setState({
+            filterType:types.SHOW_COMPLETED
+        });
         this.props.taskAction.filterTaskList(types.SHOW_COMPLETED);
     }
     render() {
@@ -20,13 +32,13 @@ export default class Header extends Component {
             <div className={`${styles.header}`}>
                 <ul className={styles['menu-bar']}>
                     <li>
-                        <a href="#">My Taks</a>
+                        <a href="#" onClick={(evt)=>{this.showAllTask()}}>My Taks</a>
                     </li>
                     <li>
-                        <a href="#">In Progress</a>
+                        <a href="#" onClick={(evt)=>{this.showProgressTask()}}>In Progress</a>
                     </li>
                     <li>
-                        <a href="#">Completed</a>
+                        <a href="#" onClick={(evt)=>{this.showCompletedTask()}}>Completed</a>
                     </li>
                 </ul>
             </div>

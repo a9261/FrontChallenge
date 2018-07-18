@@ -5,8 +5,7 @@ export default class TaskList extends React.Component {
   constructor(props) {
     super(props)
     this.unDoneTasks = 0;
-    this.tasksEle = this.renderItems(props.taskData)
-
+    this.tasksEle = this.renderItems(props.filteredItemData.items)
   }
   renderItems(tasks) {
     let result = tasks.map((item, i) => {
