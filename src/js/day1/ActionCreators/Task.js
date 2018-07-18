@@ -2,6 +2,23 @@
 import * as types from '../Constants/ActionTypes'
 import { showEditTaskLayout } from './Layout';
 
+export function filterTaskList(filter){
+    return function(dispatch,getState){
+        dispatch({
+            type:types.SET_FILTER,
+            data:filter
+        })
+    }
+}
+export function setTaskFavItem(taskItem){
+    //There only setting TaskItem is 
+    return function(dispatch,getState){
+        dispatch({
+            type:types.EDIT_TASK,
+            data:taskItem
+        })
+    }
+}
 export function setEditTaskItem(taskItem){
     return function (dispatch,getState){
         dispatch({
@@ -10,10 +27,6 @@ export function setEditTaskItem(taskItem){
         })
         dispatch(showEditTaskLayout())
     }
-    // return {
-    //     type:types.GET_TASK_ITEM,
-    //     data:taskId
-    // }
 }
 
 export function addTask(task){

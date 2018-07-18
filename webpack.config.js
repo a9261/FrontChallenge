@@ -4,23 +4,25 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
 var config = {}
 config.optimization = {
-    splitChunks: {
-        cacheGroups: {
-            styles: {
-                name: 'styles',
-                test: /\.css$/,
-                chunks: 'all',
-                enforce: true
-            }
-        }
-    }
+    // 用套件時，啟用以下設定會有問題，要再詳查
+    // splitChunks: {
+    //     cacheGroups: {
+    //         styles: {
+    //             name: 'styles',
+    //             test: /\.css$/,
+    //             chunks: 'all',
+    //             enforce: true
+    //         }
+    //     }
+    // }
 }
 config.target = 'web';
 //Setting Envirnoment
@@ -78,14 +80,14 @@ config.module = {
                         localIdentName: '[name]__[local]___[hash:base64:5]'
                     }
                 }
-                // , {
-                //     loader: 'postcss-loader',
-                //     options: {
-                //         plugins: () => [require('autoprefixer')({
-                //                 'browsers': ['> 1%', 'last 2 versions']
-                //             })]
-                //     }
-                // }
+                , {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: () => [require('autoprefixer')({
+                                'browsers': ['> 1%', 'last 2 versions']
+                            })]
+                    }
+                }
                 ,{
                 loader:'sass-loader',
                 options:{
@@ -105,14 +107,14 @@ config.module = {
                         localIdentName: '[name]__[local]___[hash:base64:5]'
                     }
                 }
-                // , {
-                //     loader: 'postcss-loader',
-                //     options: {
-                //         plugins: () => [require('autoprefixer')({
-                //                 'browsers': ['> 1%', 'last 2 versions ']
-                //             })]
-                //     }
-                // }
+                , {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: () => [require('autoprefixer')({
+                                'browsers': ['> 1%', 'last 2 versions ']
+                            })]
+                    }
+                }
             ]
         }, {
             test: /\.txt$/, // MyLoader Test
