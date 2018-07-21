@@ -2,6 +2,17 @@
 import * as types from '../Constants/ActionTypes'
 import {showEditTaskLayout} from './Layout';
 
+function _updateFilteredTaskList(dispatch,getState){
+    let items = getState().taskProcess;
+    let filterType = getState().filteredProcess.type;
+    dispatch({
+        type: types.SET_FILTER,
+        data: {
+            filter: filterType,
+            taskItems: items
+        }
+    })
+}
 export function filterTaskList(filter) {
     return function (dispatch, getState) {
         // let originData = getState()
@@ -14,10 +25,11 @@ export function filterTaskList(filter) {
         })
     }
 }
-export function setTaskFavItem(taskItem) {
+export function setTaskItemStatus(taskItem) {
     //There only setting TaskItem is
     return function (dispatch, getState) {
         dispatch({type: types.EDIT_TASK, data: taskItem})
+        _updateFilteredTaskList(dispatch,getState);
     }
 }
 export function setEditTaskItem(taskItem) {
@@ -29,23 +41,19 @@ export function setEditTaskItem(taskItem) {
 
 export function addTask(task) {
     return function (dispatch, getState) {
-        let filterType = getState().filteredProcess.type;
         dispatch({type: types.ADD_TASK, data: task});
-        let items = getState().taskProcess;
-        console.log(items);
-        console.log(filterType);
-        dispatch({
-            type: types.SET_FILTER,
-            data: {
-                filter: filterType,
-                taskItems: items
-            }
-        })
+        _updateFilteredTaskList(dispatch,getState);
     }
 }
 export function delTask(taskId) {
-    return {type: types.DELETE_TASK, data: taskId}
+    return function(dispatch,getState){
+        dispatch({type: types.DELETE_TASK, data: taskId});
+        _updateFilteredTaskList(dispatch,getState);
+    }
 }
 export function editTask(task) {
-    return {type: types.EDIT_TASK, data: task}
+    return function(dispatch,getState){
+        dispatch({type: types.EDIT_TASK, data: task});
+        _updateFilteredTaskList(dispatch,getState);
+    }
 }

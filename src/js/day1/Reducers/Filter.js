@@ -15,7 +15,6 @@ export default function filteredProcess(state = initState, action) {
                     }
                     return state;
                 case types.SHOW_COMPLETED:
-                    console.log('SHOW_COMPLETED');
                     filteredTasks = action
                         .data
                         .taskItems

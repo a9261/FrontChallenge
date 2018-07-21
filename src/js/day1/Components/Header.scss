@@ -1,3 +1,11 @@
+@mixin shareSpanAfter(){
+    content:'';
+    position: relative;
+    height: 5px;
+    background: #fff;
+    display: block;
+    margin-top: 20px;
+}
 .header{
     display:flex;
     align-items: center;
@@ -13,12 +21,21 @@
             color:#00408b;
             float: left;
             font-size:24px;
+            text-align: center;
         }
-        a:hover{
-            color:#fff;
-        }
-        a:active{
-            color: #fff;
+        span {
+            &:hover {
+                color:#fff;
+                &:after{
+                    @include shareSpanAfter();
+                }
+            }
+            .active {
+                color: #fff;
+                &:after{
+                    @include shareSpanAfter();
+                }
+            }
         }
     }
 }

@@ -12,13 +12,11 @@ export default class Task extends Component {
   }
   setTaskFav(isFav){
     let editItem = Object.assign({},this.taskItem,{id:this.props.id,IsFavorite:isFav});
-    this.taskAction.setTaskFavItem(editItem);
+    this.taskAction.setTaskItemStatus(editItem);
   }
   setTaskDone(isDone){
-    console.log('isDone');
-    console.log(isDone);
-    let editItem = Object.assign({},this.taskItem,{id:this.props.id,IsDone:isDone});
-    this.taskAction.setTaskFavItem(editItem);
+    let editItem = Object.assign({},this.taskItem,{id:this.props.id,IsDone:!this.taskItem.IsDone});
+    this.taskAction.setTaskItemStatus(editItem);
   }
   _getCommonEle(taskItem){
     return (

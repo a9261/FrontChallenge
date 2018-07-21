@@ -4,41 +4,35 @@ import styles from './Header.scss'
 export default class Header extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            filterType : types.SHOW_ALL
-        }
-        this.props.taskAction.filterTaskList(this.state.filterType);
+        this._chkFilterType = this._chkFilterType.bind(this);
     }
     showAllTask(){
-        this.setState({
-            filterType:types.SHOW_ALL
-        });
         this.props.taskAction.filterTaskList(types.SHOW_ALL);
     }
     showProgressTask(){
-        this.setState({
-            filterType:types.SHOW_PROGRESS
-        });
         this.props.taskAction.filterTaskList(types.SHOW_PROGRESS);
     }
     showCompletedTask(){
-        this.setState({
-            filterType:types.SHOW_COMPLETED
-        });
         this.props.taskAction.filterTaskList(types.SHOW_COMPLETED);
+    }
+    _chkFilterType(filterTypeName){
+        if(filterTypeName==this.props.filteredItemData.type){
+            return styles['active'];
+        }
+        return  ' ';
     }
     render() {
         return (
             <div className={`${styles.header}`}>
                 <ul className={styles['menu-bar']}>
                     <li>
-                        <a href="#" onClick={(evt)=>{this.showAllTask()}}>My Taks</a>
+                        <span  className={this._chkFilterType(types.SHOW_ALL)}  onClick={(evt)=>{this.showAllTask()}}>My Taks</span>
                     </li>
                     <li>
-                        <a href="#" onClick={(evt)=>{this.showProgressTask()}}>In Progress</a>
+                        <span className={this._chkFilterType(types.SHOW_PROGRESS)} onClick={(evt)=>{this.showProgressTask()}}>In Progress</span>
                     </li>
                     <li>
-                        <a href="#" onClick={(evt)=>{this.showCompletedTask()}}>Completed</a>
+                        <span className={this._chkFilterType(types.SHOW_COMPLETED)} onClick={(evt)=>{this.showCompletedTask()}}>Completed</span>
                     </li>
                 </ul>
             </div>

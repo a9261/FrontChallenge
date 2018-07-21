@@ -9,6 +9,7 @@ export default function taskProcess(state = initState, action) {
                 action.data
             ]
         case types.EDIT_TASK:
+        console.log(action.data);
             let newTasks = state.map((item, i) => {
                 if (i == action.data.id) {
                     return action.data;

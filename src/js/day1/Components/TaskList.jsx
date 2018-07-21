@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Task from './Task'
 import styles from './TaskList.scss'
+import {createDefaultConnectComponent} from "../ConnectCreator";
 export default class TaskList extends React.Component {
   constructor(props) {
     super(props)

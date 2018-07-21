@@ -6,8 +6,12 @@ import {createStore, applyMiddleware} from "redux";
 import {Provider} from 'react-redux'
 import allReducer from './Reducers';
 import thunk from 'redux-thunk';
-
-let ContentContainer = createConnectComponent(Content,null);
+const mapStateToProps = (state) => {
+    return {
+        filteredItemData : state.filteredProcess,
+    }
+};
+let ContentContainer = createConnectComponent(Content,mapStateToProps);
 let store = createStore(allReducer, applyMiddleware(thunk));
 ReactDOM.render(
     <Provider store={store}>

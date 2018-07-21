@@ -8,12 +8,15 @@ import allReducer from './Reducers';
 import * as layoutAction from './ActionCreators/Layout'
 import {createDefaultConnectComponent,createConnectComponent} from './ConnectCreator';
 export default class Content extends React.Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     let MainContentContainer = createDefaultConnectComponent(MainContent);
     let HeaderContainer = createConnectComponent(Header,null);
     return (
       <div id="content-wrapper" className={`${styles['content-wrapper']}`}>
-        <HeaderContainer/>
+        <HeaderContainer {...this.props}/>
         <MainContentContainer/>
       </div>
     )
