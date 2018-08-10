@@ -25,17 +25,19 @@
         }
         span {
             &:hover {
+                cursor: pointer;
                 color:#fff;
                 &:after{
                     @include shareSpanAfter();
                 }
             }
-            .active {
+            &.active {
                 color: #fff;
                 &:after{
                     @include shareSpanAfter();
                 }
             }
         }
+        
     }
 }

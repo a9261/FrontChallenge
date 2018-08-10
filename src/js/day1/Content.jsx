@@ -1,24 +1,22 @@
 import * as React from 'react';
+import { createStore, bindActionCreators } from 'redux';
+import { connect, Provider } from 'react-redux';
 import styles from './ContentWrapper.scss';
 import MainContent from './Components/MainContent';
 import Header from './Components/Header';
-import {createStore, bindActionCreators} from "redux";
-import {connect, Provider} from 'react-redux';
 import allReducer from './Reducers';
-import * as layoutAction from './ActionCreators/Layout'
-import {createDefaultConnectComponent,createConnectComponent} from './ConnectCreator';
+import * as layoutAction from './ActionCreators/Layout';
+import { createDefaultConnectComponent, createConnectComponent } from './ConnectCreator';
+
 export default class Content extends React.Component {
-  constructor(props){
-    super(props)
-  }
   render() {
-    let MainContentContainer = createDefaultConnectComponent(MainContent);
-    let HeaderContainer = createConnectComponent(Header,null);
+    const MainContentContainer = createDefaultConnectComponent(MainContent);
+    const HeaderContainer = createConnectComponent(Header, null);
     return (
       <div id="content-wrapper" className={`${styles['content-wrapper']}`}>
-        <HeaderContainer {...this.props}/>
-        <MainContentContainer/>
+        <HeaderContainer {...this.props} />
+        <MainContentContainer />
       </div>
-    )
+    );
   }
 }

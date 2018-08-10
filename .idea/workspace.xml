@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f8e3b89-e7b7-4440-9410-50124d4aad5b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/js/day1/ActionCreators/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/ActionCreators/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/day1/Components/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/MainContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/day1/Components/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/Header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/day1/Components/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/Task.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/day1/Components/TaskEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/TaskEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/day1/Components/TaskEdit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/day1/Components/TaskEdit.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="TaskList.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="407">
+              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -35,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/js/day1/Reducers/Filter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
-              <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -43,8 +44,8 @@
       <file leaf-file-name="Task.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/day1/Components/Task.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="1221">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -98,7 +99,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -178,7 +179,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NodeJSPackage/HtmlSEO" />
     <property name="prettierjs.PrettierConfiguration.Package" value="F:\FrontEndProject\FrontChallenge\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="F:\FrontEndProject\FrontChallenge\node_modules\typescript\lib" />
@@ -208,12 +209,13 @@
       <workItem from="1532055187401" duration="139000" />
       <workItem from="1532154098399" duration="1128000" />
       <workItem from="1532155337725" duration="127000" />
-      <workItem from="1532156250448" duration="44000" />
+      <workItem from="1532156250448" duration="643000" />
+      <workItem from="1532420490941" duration="79000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1438000" />
+    <option name="totallyTimeSpent" value="2116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -249,6 +251,45 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/Reducers/Filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/Components/Task.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/Constants/ActionTypes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="814">
           <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
@@ -272,13 +313,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js" />
     <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -304,13 +339,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js" />
     <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -340,24 +369,18 @@
     <entry file="file://$PROJECT_DIR$/src/js/day1/Constants/ActionTypes.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/day1/ActionCreators/Test.js" />
     <entry file="file://$PROJECT_DIR$/src/js/day1/Reducers/Filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
-          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/day1/Components/Task.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="1221">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -366,8 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/day1/Components/TaskList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="407">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>

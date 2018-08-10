@@ -30,7 +30,7 @@ config.mode = 'development';
 config.devtool = 'source-map',
 config.entry = {
     day1: './src/js/day1/main.jsx',
-    day2: './src/js/day2/main.js',
+    day2: './src/js/day2/main.jsx',
     day3: './src/js/day3/main.js',
     day4: './src/js/day4/main.js',
     day5: './src/js/day5/main.js',
@@ -38,7 +38,8 @@ config.entry = {
 }
 config.output = {
     // path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
+    // filename: '[name].[hash].js',
     // chunkFilename:'[name].js', publicPath: "/assets/"
     publicPath: '',
     sourceMapFilename: '[file].map'
@@ -65,7 +66,8 @@ config.module = {
                 loader: 'babel-loader',
                 options: {
                     //   presets: ['@babel/preset-env']
-                    presets: ['env', 'react']
+                    presets: ['env', 'react'],
+                    plugins:["syntax-dynamic-import"]
                 }
             }
         }, {
@@ -134,7 +136,16 @@ config.plugins = [
     // new CleanWebpackPlugin(paths [, {options}])
     new CleanWebpackPlugin(['dist']),
     new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({filename: 'day1.html', template: './src/challengs/day1.html', inject: true, hash: true, chunks: ['day1']}),
+    new HtmlWebpackPlugin({
+        filename: 'day1.html', 
+        template: './src/challengs/day1.html', 
+        inject: true, hash: true, chunks: ['day1']
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'day2.html', 
+        template: './src/challengs/day2.html',
+        inject: true, hash: true, chunks: ['day2']
+    }),
     new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery', "window.jQuery": "jquery"}),
     new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output both options are
@@ -150,13 +161,14 @@ config.devServer = {
     compress: true,
     inline: true,
     watchContentBase: true,
+    historyApiFallback: true,
     contentBase: './dist',
     historyApiFallback: {
         rewrites: [
-            {
-                from: /^\/$/,
-                to: '/day1.html'
-            },
+            // {
+            //     from: /^\/$/,
+            //     to: '/day2.html'
+            // },
             //   { from: /^\/subpage/, to: '/views/subpage.html' },   { from: /./, to:
             // '/views/404.html' }
         ]

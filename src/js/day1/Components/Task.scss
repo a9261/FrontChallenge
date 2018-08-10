@@ -1,11 +1,20 @@
+@import 'ShareStyle/Share'; 
 .task {
   margin-top: 8px;
   font-family: Roboto-Medium;
   font-size: 24px;
   color: #000000;
+  @include cus-chkbox;
+  .common-section {
+    width:100%;
+    padding-top:20px;
+    padding-left:20px;
+    span{
+      margin-left:20px;
+    }
+  }
   .task-right-icons {
     float:right;
-    margin-top:20px;
     i {
       margin-right:10px;
     }
@@ -21,6 +30,16 @@
     // align-content: flex-end;
     .width-100 {
       width: 100%;
+    }
+    .status-section{
+      margin-left:50px; 
+      font-size:14pt;
+      i { 
+        margin-left:10px; 
+      }
+      span {
+        margin-left:10px;
+      }
     }
   }
   .done-task {
