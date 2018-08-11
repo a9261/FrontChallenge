@@ -2,10 +2,11 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter , HashRouter as Router, Route, Switch  } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import Content from './Content';
-import Detail from './Detail';
+import Content from './Content'
+import ItemList from './Component/Content/ItemList/ItemList'
+import ItemDetail from './Component/Content/ItemDetail/ItemDetail'
 // import { createConnectComponent } from ''
 // import allReducer from './Reducers'
 
@@ -26,18 +27,31 @@ const AsyncContent = Loadable({
     loading: MyLoadingComponent
 });
 
+const AsyncList = Loadable({
+  loader: () => import('./Component/Content/ItemList/ItemList'),
+  loading: MyLoadingComponent
+});
 const AsyncDetail = Loadable({
-    loader: () => import('./Detail'),
+    loader: () => import('./Component/Content/ItemDetail/ItemDetail'),
     loading: MyLoadingComponent
+});
+const AsyncNotFound = Loadable({
+  loader: () => {  return (
+    <div>
+        <h1>Not Found~~~</h1>
+    </div>
+);},
+  loading: MyLoadingComponent
 });
 ReactDom.render(
   <Router>
-    <div>
+    <Content>
       <Switch>
-      <Route exact path="/" component={AsyncContent} />
-      <Route path="/d" component={AsyncDetail} />
+        <Route exact path="/" component={Content}/>
+        <Route path="/l" component={ItemList} />
+        <Route path="/d" component={ItemDetail} />
       </Switch>
-    </div>
+    </Content>
   </Router>,
 // {/* <Content/>, */}
   document.getElementById('example'),
