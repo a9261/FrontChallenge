@@ -44,15 +44,15 @@ const AsyncNotFound = Loadable({
   loading: MyLoadingComponent
 });
 ReactDom.render(
-  <Router>
     <Content>
+      <Router>
       <Switch>
-        <Route exact path="/" component={Content}/>
         <Route path="/l" component={ItemList} />
         <Route path="/d" component={ItemDetail} />
       </Switch>
+      </Router>
     </Content>
-  </Router>,
+  ,
 // {/* <Content/>, */}
   document.getElementById('example'),
 );
