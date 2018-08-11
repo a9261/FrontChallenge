@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import styles from './Content.scss';
 import Menu from './Component/Menu/Menu';
 import Header from './Component/Header/Header';
-import OutletRightContent from './OutletRightContent';
+import ItemList from './Component/Content/ItemList/ItemList';
+import ItemDetail from './Component/Content/ItemDetail/ItemDetail';
 
 export default class Content extends Component {
   render() {
@@ -20,7 +22,11 @@ export default class Content extends Component {
           </div>
           <div name="right-content" className="col-lg-8 col-xl-8">
             {/* <ItemList /> */}
-            {children}
+            {/* {children} */}
+            <Switch>
+              <Route path="/l" component={ItemList} />
+              <Route path="/d" component={ItemDetail} />
+            </Switch>
           </div>
         </div>
       </div>
