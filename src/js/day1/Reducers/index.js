@@ -1,12 +1,13 @@
-//@ts-check
-import layoutProcess from './Layout'
-import taskProcess from './Task'
+// @ts-check
+import { combineReducers } from 'redux';
+import layoutProcess from './Layout';
+import taskProcess from './Task';
 import taskItemProcess from './TaskItem';
 import filteredProcess from './Filter';
-import { combineReducers } from 'redux'
+
 
 const allReducer = combineReducers({
-    layoutProcess,taskProcess,filteredProcess,taskItemProcess,
-})
+  layoutProcess, taskProcess, filteredProcess, taskItemProcess,
+});
+export default allReducer;
 
-export default allReducer

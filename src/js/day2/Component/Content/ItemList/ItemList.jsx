@@ -10,6 +10,7 @@ export default class ItemList extends Component {
   }
 
   render() {
+    console.log('ItemList render');
     const { results } = this.state;
     return (
       <div className={`${styles['right-content']}`}>
@@ -63,6 +64,27 @@ export default class ItemList extends Component {
               </div>
             </li>
           </ul>
+        </div>
+        <div className={`${styles['pagging-bar']}`}>
+          <nav aria-label="Page navigation example">
+            <ul className="pagination">
+              <li className="page-item">
+                <a className="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span className="sr-only">Previous</span>
+                </a>
+              </li>
+              <li className="page-item"><a className="page-link" href="#">1</a></li>
+              <li className="page-item"><a className="page-link" href="#">2</a></li>
+              <li className="page-item"><a className="page-link" href="#">3</a></li>
+              <li className="page-item">
+                <a className="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span className="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     );

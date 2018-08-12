@@ -2,12 +2,25 @@ import React, { Component } from 'react';
 import styles from './Menu.scss';
 
 export default class Menu extends Component {
+  constructor(props) {
+    super(props);
+    this.onLocationChange = this.onLocationChange.bind(this);
+    console.log(props);
+  }
+
+  onLocationChange() {
+    const { history, commonAction, commonData } = this.props;
+    commonAction.setItemList(`${commonData.keyword}A`);
+    history.push('/d');
+  }
+
   render() {
+    console.log('Menu Render');
     return (
       <div className={`${styles['left-menu']}`}>
         <div className={`${styles.location}`}>
           <h5>Location</h5>
-          <select>
+          <select onChange={this.onLocationChange}>
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>

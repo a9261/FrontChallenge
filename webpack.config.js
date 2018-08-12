@@ -31,7 +31,7 @@ config.devtool = 'source-map',
 config.entry = {
     day1: './src/js/day1/main.jsx',
     day2: './src/js/day2/main.jsx',
-    day3: './src/js/day3/main.js',
+    day3: './src/js/day3/main.jsx',
     day4: './src/js/day4/main.js',
     day5: './src/js/day5/main.js',
     day6: './src/js/day6/main.js'
@@ -45,7 +45,7 @@ config.output = {
     sourceMapFilename: '[file].map'
 }
 config.resolve = {
-    extensions: [".ts", ".tsx", ".jsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".jsx", ".js", ".json", '.scss', '.css']
 }
 // config.externals={     "react": "React",     "react-dom": "ReactDOM" } module
 // setting
@@ -145,6 +145,11 @@ config.plugins = [
         filename: 'day2.html', 
         template: './src/challengs/day2.html',
         inject: true, hash: true, chunks: ['day2']
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'day3.html', 
+        template: './src/challengs/day3.html',
+        inject: true, hash: true, chunks: ['day3']
     }),
     new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery', "window.jQuery": "jquery"}),
     new MiniCssExtractPlugin({

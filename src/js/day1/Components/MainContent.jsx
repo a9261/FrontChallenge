@@ -1,24 +1,20 @@
-import React, {Component} from 'react'
-import styles from './MainContent.scss'
+import React, { Component } from 'react';
+import styles from './MainContent.scss';
 import TaskList from './TaskList';
 import TaskEdit from './TaskEdit';
 import TaskAdd from './TaskAdd';
-import {createDefaultConnectComponent,createConnectComponent} from '../ConnectCreator';
-export default class MainContent extends Component {
+import { createDefaultConnectComponent, createConnectComponent } from '../ConnectCreator';
 
-  constructor(props) {
-    super(props);
-   
-  }
+export default class MainContent extends Component {
   render() {
-    let isEditMode = this.props.layoutData.addTaskPanel || this.props.layoutData.editTaskPanel;
-    let TaskListContainer = createDefaultConnectComponent(TaskList);
+    const isEditMode = this.props.layoutData.addTaskPanel || this.props.layoutData.editTaskPanel;
+    const TaskListContainer = createDefaultConnectComponent(TaskList);
     return (
       <div>
-        {!isEditMode && <TaskAdd {...this.props}/>}
-        {isEditMode && <TaskEdit {...this.props}/>}
+        {!isEditMode && <TaskAdd {...this.props} />}
+        {isEditMode && <TaskEdit {...this.props} />}
         <TaskListContainer {...this.props} />
       </div>
-    )
+    );
   }
 }

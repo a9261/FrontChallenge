@@ -47,6 +47,7 @@
     "@types/prop-types": "^15.5.3",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "history": "^4.7.2",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",

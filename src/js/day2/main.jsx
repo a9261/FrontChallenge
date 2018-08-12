@@ -2,13 +2,14 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import {BrowserRouter , HashRouter as Router, Route, Switch  } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Content from './Content'
 import ItemList from './Component/Content/ItemList/ItemList'
 import ItemDetail from './Component/Content/ItemDetail/ItemDetail'
-// import { createConnectComponent } from ''
-// import allReducer from './Reducers'
+import { createConnectComponent } from './Reducers/ConnectCreator'
+import allReducer from './Reducers/CommonReducer';
 
 const MyLoadingComponent = ({ isLoading, error }) => {
   // Handle the loading state
@@ -43,11 +44,16 @@ const AsyncNotFound = Loadable({
 );},
   loading: MyLoadingComponent
 });
+
+const ContentContainer = createConnectComponent(Content,null,null)
+const store = createStore(allReducer,applyMiddleware(thunk))
 ReactDom.render(
-  <Router>
-     <Route exact path="/" component={Content}/>
-     {/* <Content/> */}
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Route path="/" component={ContentContainer} />
+    </Router>
+  </Provider>
+  ,
 // {/* <Content/>, */}
   document.getElementById('example'),
 );

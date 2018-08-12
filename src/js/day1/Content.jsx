@@ -10,8 +10,11 @@ import { createDefaultConnectComponent, createConnectComponent } from './Connect
 
 export default class Content extends React.Component {
   render() {
+    const mapStateToProps = state => ({
+      filteredItemData: state.filteredProcess,
+    });
     const MainContentContainer = createDefaultConnectComponent(MainContent);
-    const HeaderContainer = createConnectComponent(Header, null);
+    const HeaderContainer = createConnectComponent(Header, mapStateToProps);
     return (
       <div id="content-wrapper" className={`${styles['content-wrapper']}`}>
         <HeaderContainer {...this.props} />

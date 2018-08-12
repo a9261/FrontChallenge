@@ -3,6 +3,8 @@ import styles from './ItemDetail.scss';
 
 export default class ItemDetail extends Component {
   render() {
+    console.log('ItemDetail render');
+    const { commonData } = this.props;
     return (
       <div className={`${styles['right-content']}`}>
         <div id="breadcrumbs" className={`${styles.breadcrumbs}`}>
@@ -13,6 +15,7 @@ export default class ItemDetail extends Component {
         <div id="content" className={`${styles.content}`}>
           <img src="https://fakeimg.pl/644x352/" alt="t" />
           <div className={`${styles.detail}`}>
+            <h1>{commonData.keyword}</h1>
             <h1>Kogi cosBy</h1>
             <div className={`${styles.local}`}>
               <span>主辦單位</span>
