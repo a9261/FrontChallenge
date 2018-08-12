@@ -1,0 +1,32 @@
+@import '../../ShareStyle';
+    .detail {
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        vertical-align: top;
+        height:220px;
+        padding:10px;
+        p{
+            flex:none;
+            height:76px;
+            overflow: hidden;
+        }
+        .local {
+            flex:none;
+            margin-top:auto;
+            height:auto;
+            width:auto;
+            div {
+                display: inline-block;
+            }
+            .tag {
+                @include tag;
+                margin-left:10px;
+            }
+            span ~ span {
+                margin-left:10px;
+                margin-right:10px;
+            }
+        }
+    }

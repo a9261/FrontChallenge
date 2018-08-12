@@ -1,15 +1,22 @@
-import history from '../history';
 
-export function setItemList(keyword) {
+
+export function setItemList(filter, history) {
+  const formData = Object.keys(filter).map(keyName => `${encodeURIComponent(keyName)}=${encodeURIComponent(filter[keyName])}`).join('&');
   return (dispatch, getState) => {
-    console.log(getState());
-    dispatch({
-      type: 'SET_KEYWORD',
-      data: {
-        keyword,
+    fetch(`https://data.kcg.gov.tw/api/action/datastore_search?${formData}`, {
+      method: 'GET',
+      headers: {
+        // Accept: 'application/json',
+        // 'Content-Type': 'application/json',
       },
-    });
-    history.push('/d');
+    }).then(res => res.json())
+      .then((res) => {
+        dispatch({
+          type: 'GET_CONTENT',
+          data: res.result.records,
+        });
+        history.push('/l');
+      });
   };
 }
 export function setEmpty() {

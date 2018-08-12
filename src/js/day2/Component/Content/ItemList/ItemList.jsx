@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './ItemList.scss';
+import Item from '../Item/Item';
 
 export default class ItemList extends Component {
   constructor(props) {
@@ -7,6 +8,11 @@ export default class ItemList extends Component {
     this.state = {
       results: 10,
     };
+  }
+
+  getItems() {
+    const { commonData } = this.props;
+    return commonData.map((item, index) => <Item key={index} {...item} />);
   }
 
   render() {
@@ -21,48 +27,7 @@ export default class ItemList extends Component {
         </div>
         <div id="content" className={`${styles.content}`}>
           <ul>
-            <li>
-              <img src="https://fakeimg.pl/220x220/" alt="test" />
-              <div className={`${styles.detail}`}>
-                <h4>Kogi CosBy Sweater.</h4>
-                <p>Donce asdfdsfdsf</p>
-                <div className={`${styles.local}`}>
-                  <span>主辦單位</span>
-                  <div>Entertainment</div>
-                  <br />
-                  <i className="fas fa-map-marker-alt" /><span>Kaohsiung City</span>
-                  <i className="far fa-calendar-alt" /><span>2018/5/24 - 2018/5/31</span>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/220x220/" alt="test" />
-              <div className={`${styles.detail}`}>
-                <h4>Kogi CosBy Sweater.</h4>
-                <p>Donce asdfdsfdsf</p>
-                <div className={`${styles.local}`}>
-                  <span>主辦單位</span>
-                  <div>Entertainment</div>
-                  <br />
-                  <i className="fas fa-map-marker-alt" /><span>Kaohsiung City</span>
-                  <i className="far fa-calendar-alt" /><span>2018/5/24 - 2018/5/31</span>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/220x220/" alt="test" />
-              <div className={`${styles.detail}`}>
-                <h4>Kogi CosBy Sweater.</h4>
-                <p>Donce asdfdsfdsf</p>
-                <div className={`${styles.local}`}>
-                  <span>主辦單位</span>
-                  <div>Entertainment</div>
-                  <br />
-                  <i className="fas fa-map-marker-alt" /><span>Kaohsiung City</span>
-                  <i className="far fa-calendar-alt" /><span>2018/5/24 - 2018/5/31</span>
-                </div>
-              </div>
-            </li>
+            {this.getItems()}
           </ul>
         </div>
         <div className={`${styles['pagging-bar']}`}>

@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
 
-const initState = {
-  keyword: '',
-};
+const initState = [];
 export function itemList(state = initState, action) {
+  const data = [].concat(state).concat(action.data);
   switch (action.type) {
-    case 'SET_KEYWORD':
-      return Object.assign({}, state, { keyword: action.data.keyword });
+    case 'GET_CONTENT':
+      return data;
     default:
       return state;
   }

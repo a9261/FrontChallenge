@@ -1,11 +1,6 @@
-@mixin tag {
-    display: inline-block;
-    border:1px solid #9013FE ;
-    border-radius:25px;
-    padding: 0.3rem 1rem;
-    font-size: 0.75rem;
-  }
-  @mixin searchFilter {
+@import '../../ShareStyle';
+
+@mixin searchFilter {
       .search-filter{
           div {
               @include tag;
@@ -23,8 +18,8 @@
       .content {
           margin-top:10px;
           ul {
-              li {
-                display: block;
+            li {
+                display: flex;
                 list-style-type: none;
                 margin-top:10px;
                 height:220px;
@@ -32,34 +27,13 @@
                 img{
                     display: inline-block;
                     vertical-align: top;
+                    height:220px;
+                    width:220px;
                 }
-                div {
-                    position: relative;
-                    padding-left:14px;
-                    display: inline-block;
-                }
+                
                 &:hover {
                     box-shadow:2px 2px 5px;
                 }
-              }
-          }
-          .detail {
-              position: relative;
-              vertical-align: top;
-              height:220px;
-              .local {
-                  position: absolute;
-                  bottom:10px;
-                  left:6px;
-                  width:400px;
-                  div {
-                      @include tag;
-                      margin-left:10px;
-                  }
-                  span ~ span {
-                      margin-left:10px;
-                      margin-right:10px;
-                  }
               }
           }
       }
