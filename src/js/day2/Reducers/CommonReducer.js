@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 
-const initItemList = [];
+const initItemList = {
+  items: [],
+  total: 0,
+  offset: 0,
+  q: '',
+};
 export function itemList(state = initItemList, action) {
-  const data = [].concat(action.data);
+  const data = Object.assign({}, action.data);
   switch (action.type) {
     case 'GET_CONTENT':
       return data;

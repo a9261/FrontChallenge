@@ -10,9 +10,16 @@ export function setItemList(filter, history) {
       },
     }).then(res => res.json())
       .then((res) => {
+        console.log('setItemList');
+        console.log(res);
         dispatch({
           type: 'GET_CONTENT',
-          data: res.result.records,
+          data: {
+            total: res.result.total,
+            items: res.result.records,
+            offset: filter.offset > 0 ? filter.offset : 0,
+            q: res.result.q,
+          },
         });
         history.push('/l');
       });
