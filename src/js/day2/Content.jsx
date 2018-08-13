@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { inherits } from 'util';
+import {
+  HashRouter as Router, Route, Switch, withRouter,
+} from 'react-router-dom';
+// import { Route, Switch } from './myRouter';
 import styles from './Content.scss';
 import Menu from './Component/Menu/Menu';
 import Header from './Component/Header/Header';
@@ -11,36 +13,39 @@ import { createConnectComponent } from './Reducers/ConnectCreator';
 export default class Content extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.init();
   }
 
   init() {
-    this.ItemListContainer = createConnectComponent(ItemList);
-    this.ItemDetailContainer = createConnectComponent(ItemDetail);
-    this.MenuContainer = createConnectComponent(Menu);
+    this.ItemListContainer = (createConnectComponent(ItemList));
+    this.ItemDetailContainer = (createConnectComponent(ItemDetail));
+    this.HeaderContainer = withRouter(createConnectComponent(Header, null));
+    this.MenuContainer = withRouter(createConnectComponent(Menu, null));
   }
 
   render() {
     console.log('Content Render');
     const MenuContainer = this.MenuContainer;
+    const HeaderContainer = this.HeaderContainer;
     return (
       <div className="container-fluid">
         <div className="row ">
-          <Header />
+          <HeaderContainer />
         </div>
         <div className="row">
           <div name="left-menu" className=" col-lg-4 col-xl-2 pl-4 ">
             {/* <Menu {...this.props} /> */}
-            <MenuContainer {...this.props} />
+            <MenuContainer />
           </div>
           <div name="right-content" className="col-lg-8 col-xl-8">
             {/* <ItemList /> */}
             {/* {children} */}
-            <Switch>
-              <Route path="/l" component={this.ItemListContainer} />
-              <Route path="/d" component={this.ItemDetailContainer} />
-            </Switch>
+            <Router>
+              <Switch>
+                <Route path="/l" component={this.ItemListContainer} />
+                <Route path="/d/:id" component={this.ItemDetailContainer} />
+              </Switch>
+            </Router>
           </div>
         </div>
       </div>

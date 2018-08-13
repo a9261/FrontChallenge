@@ -3,7 +3,8 @@ import * as ReactDom from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import {BrowserRouter , HashRouter as Router, Route, Switch  } from 'react-router-dom';
+import {HashRouter as Router,withRouter,Route } from 'react-router-dom';
+// import {Route} from './myRouter'
 import Loadable from 'react-loadable';
 import Content from './Content'
 import ItemList from './Component/Content/ItemList/ItemList'
@@ -45,13 +46,16 @@ const AsyncNotFound = Loadable({
   loading: MyLoadingComponent
 });
 
-const ContentContainer = createConnectComponent(Content,null,null)
+
+
+const ContentContainer = withRouter(createConnectComponent(Content,null,null))
 const store = createStore(allReducer,applyMiddleware(thunk))
 ReactDom.render(
   <Provider store={store}>
-    <Router>
-      <Route path="/" component={ContentContainer} />
-    </Router>
+    <Router >
+       <Route path="/" component={ContentContainer} />  
+      {/* <ContentContainer /> */}
+    </Router >
   </Provider>
   ,
 // {/* <Content/>, */}

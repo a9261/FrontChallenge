@@ -10,6 +10,7 @@ import * as commonAction from './CommonAction';
 // connnect mapStateToProps 要使用那些State mapDispatchToProps 要使用那些Action Creator
 const mapStateToProps = state => ({
   commonData: state.itemList,
+  item: state.item,
 });
 const mapDispatchToProps = dispatch => ({
   commonAction: bindActionCreators(commonAction, dispatch),

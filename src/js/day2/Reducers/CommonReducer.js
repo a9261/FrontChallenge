@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-const initState = [];
-export function itemList(state = initState, action) {
-  const data = [].concat(state).concat(action.data);
+const initItemList = [];
+export function itemList(state = initItemList, action) {
+  const data = [].concat(action.data);
   switch (action.type) {
     case 'GET_CONTENT':
       return data;
@@ -10,7 +10,16 @@ export function itemList(state = initState, action) {
       return state;
   }
 }
-
-const allReducer = combineReducers({ itemList });
+const initItem = {};
+export function item(state = initItem, action) {
+  const data = Object.assign({}, action.data);
+  switch (action.type) {
+    case 'GET_ITEM':
+      return data;
+    default:
+      return state;
+  }
+}
+const allReducer = combineReducers({ itemList, item });
 
 export default allReducer;

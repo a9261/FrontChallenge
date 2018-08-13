@@ -27,12 +27,17 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          img {
+            // 644x352
+            width:644px;
+            height:352px;
+          }
           .detail{
               width:644px;
               height:600px;
               position: relative;
               .local {
-                  width:400px;
+                  width:640px;
                   div {
                       @include tag;
                       margin-left:10px;

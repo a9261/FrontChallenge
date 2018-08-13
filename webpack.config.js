@@ -169,13 +169,9 @@ config.devServer = {
     historyApiFallback: true,
     contentBase: './dist',
     historyApiFallback: {
+        index:'day2.html',
         rewrites: [
-            // {
-            //     from: /^\/$/,
-            //     to: '/day2.html'
-            // },
-            //   { from: /^\/subpage/, to: '/views/subpage.html' },   { from: /./, to:
-            // '/views/404.html' }
+            { from: /^\/day2/, to: 'day2.html' }
         ]
     }
 }

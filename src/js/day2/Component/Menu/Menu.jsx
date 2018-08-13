@@ -5,7 +5,6 @@ export default class Menu extends Component {
   constructor(props) {
     super(props);
     this.onLocationChange = this.onLocationChange.bind(this);
-    console.log(props);
   }
 
   onLocationChange() {

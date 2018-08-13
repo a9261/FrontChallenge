@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
+import {
+  withRouter,
+} from 'react-router-dom';
 import styles from './ItemList.scss';
 import Item from '../Item/Item';
+import { createConnectComponent } from '../../../Reducers/ConnectCreator';
 
 export default class ItemList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      results: 10,
-    };
-  }
-
   getItems() {
     const { commonData } = this.props;
-    return commonData.map((item, index) => <Item key={index} {...item} />);
+    const NewItem = withRouter(createConnectComponent(Item, null));
+    return commonData.map(item => <NewItem key={item.Id} {...item} />);
   }
+
 
   render() {
     console.log('ItemList render');
-    const { results } = this.state;
+    const { commonData } = this.props;
     return (
       <div className={`${styles['right-content']}`}>
         <div id="filter" className={`${styles['search-filter']}`}>
-          <p>Showing {results} results by ...</p>
-          <div className={`${styles.clicked}`}>Koashuing</div>
-          <div>Entertainment</div>
+          <p>Showing {commonData.length} results by ...</p>
+          {/* <div className={`${styles.clicked}`}>Koashuing</div>
+          <div>Entertainment</div> */}
         </div>
         <div id="content" className={`${styles.content}`}>
           <ul>

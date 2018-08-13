@@ -7,7 +7,8 @@
       "jsx-a11y/label-has-for":"off",
       "react/prop-types":"off",
       "prefer-destructuring":"off",
-      "react/no-string-refs":"off"
+      "react/no-string-refs":"off",
+      "jsx-a11y/no-noninteractive-element-interactions":"off"
     },
     "env":{
         "browser": true
